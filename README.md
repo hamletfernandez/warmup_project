@@ -42,17 +42,19 @@ It is for thsi reason I wanted to put the response, publishing to twist, inside 
 ## GIF
 
 ## Challenges
+What i thougth would be correct forward values were not! The values I computed for 45 degrees and 135 degrees gave me a valid section of the ranges list but when I placed a cylinder in front of the turtlebot in gazebo the values did not change. In fact, when I placed teh cylinder towards the left and teh back of the turtlebot the values changed. I then started thinking I might have had the orientation of the turtlebot confused where 0 degrees may not have been to the immediat right of the turtlebot. My second attempt included 0 degrees immediately to the front of the robot (rotating everyting counterclockwise). I then tried to compute 45 degrees and -45 degrees (360 - 45). This is where forward_range_min = np.pi  / (4 * data.angle_increment)
+        forward_range_max = ((2 * np.pi) / data.angle_increment) - forward_range_min comes from. These values did not really work either.  
 
-
-## Future Work
+## Future Work 
 
 ## Takeaways
 ### one
+The scanner is pretty cool and grbabing data from ranges is very intuitive. Even if I didn't finish, I want to keep learning more about the scan topic and see what it can do. 
 
 ### two
 
 # Wall Follower
-
+* This task of the warmup project focused on programming the turtlebot to follow a wall instead of a person. For this assignment, I would have used the scan topic to pick a fixed distance from the wall (1 m as the minimum and maximum range) then publish a forward velocity to Twist while the range was constant. At the same time, if the ranges at the forward indicies reached 1m, I would turn left or right depending on if the wall was on the robots right or left. This could be determined depending on where the 1's are in the range list. 
 
 ## Functions
 
